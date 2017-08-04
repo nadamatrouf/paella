@@ -5,13 +5,14 @@
             var params = this.getParams();
 
             if (parent!=self) { // Embedded: maximum resolution
-                return source.length-1;
+                index = source.length-1;
             }
-            if (source.length>0) {
+            else if (source.length>0) {
                 //var selected = source[0];
                 var selected = null;
                 var win_h = $(window).height();
                 var maxRes = (paella.utils.userAgent.browser.IsMobileVersion ? params.maxMobileQualityRes : params.maxDesktopQualityRes) || 720;
+                maxRes = maxRes>win_h ? win_h : maxRes;
                 var diff = Number.MAX_VALUE;
 
                 source.forEach(function(item,i) { 
