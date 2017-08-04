@@ -2,8 +2,11 @@
 	"player":{
 		"accessControlClass":"paella.AccessControl",
         "profileFrameStrategy": "paella.ProfileFrameStrategy",
-		"videoQualityStrategy": "paella.LimitedBestFitVideoQualityStrategy",
-		"videoQualityStrategyParams":{ "maxAutoQualityRes":720 },
+		"videoQualityStrategy": "paella.ETHZVideoQualityStrategy",
+		"videoQualityStrategyParams":{
+			"maxMobileQualityRes":1080,
+			"maxDesktopQualityRes":3112
+		},
 		"reloadOnFullscreen": true,
 		"videoZoom": {
 			"enabled":true,
